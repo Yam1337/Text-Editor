@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Text Editor</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="icon" onclick="openEditor()">
+      <img src="images/notebook.svg" />
+      <div>Text Editor</div>
+    </div>
+    <div class="content" id="content">
+      <div class="navbar">
+        <div class="program">
+          <img src="images/notebook.svg" />
+          <div>Text Editor - </div><div id="fileName">New</div>
+        </div>
+        <div>
+          <button class="closeButton" id="closeButton" onclick="closeWindow()">
+            &#10006;
+          </button>
+        </div>
+      </div>
+      <div class="funcbar">
+        <button onclick="reset()">New</button>
+        <label class="upload"><input type="file" accept=".JSON" id="upload">Open...</input
+        ></label><button onclick="saveAs()">Save as...</button>
+        <div class="separator"></div>
+        <button class="bold" onclick="makeItBold()">Bold</button
+        ><button class="italic" onclick="makeItItalic()">Italic</button
+        ><button onclick="makeItList()">List &#8226;</button>
+      </div>
+      <div class="type">
+        <div id="typeInput" contenteditable="true"></div>
+      </div>
+    </div>
+    <div class="saveWindow" id="saveWindow">
+      <div class="saveContent">
+        <div class="navbar">
+          <div class="program">
+            <img src="images/notebook.svg" />
+            <div>Save as...</div>
+          </div>
+          <button class="closeButton" onclick="closeSaveWindow()">
+            &#10006;
+          </button>
+        </div>
+        <div class="saveBot">
+          <div class="nameContent">
+            <div class="saveName">Name:</div>
+            <input type="text" class="saveInput" id="saveInput" />
+          </div>
+          <div class="error" id="error">
+            File name must contain at least 3 characters
+          </div>
+          <div class="buttonContainer">
+            <button onclick="saveFile()">Save</button
+            ><button onclick="closeSaveWindow()">Cancel</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="scripts.js"></script>
+  </body>
+</html>
